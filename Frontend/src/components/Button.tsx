@@ -1,29 +1,29 @@
 type ButtonProps = {
-    /** Label placeholder for the button */
-    label: string;
-    /** Button type, either its a generic button or for forms submit */
+    label?: string;
     type?: 'button' | 'submit';
-    /** Button color */
-    variant?: 'primary' | 'success' | 'danger' | 'secondary';
-    /** On click function of the button */
+    color?: 'primary' | 'success' | 'danger' | 'secondary';
+    className?: string
     onClick?: () => void;
-    /** Boolean value determining if the button width extends to max width */
     block?: boolean;
+    icon?: string
 };
 
 function Button({
-    label,
-    type = 'submit',
-    variant = 'primary',
+    label='',
+    type = 'button',
+    color = 'primary',
     onClick,
-    block = true
+    block = false,
+    className = '',
+    icon = ''
 }: ButtonProps) {
     return (
         <button
             type={type}
             onClick={onClick}
-            className={`btn btn-${variant} ${block ? 'w-100' : ''}`}
+            className={`btn btn-${color} ${block ? 'w-100' : ''} ${className}`}
         >
+            {icon && <i className={`${icon} me-2`} />}
             {label}
         </button>
     );

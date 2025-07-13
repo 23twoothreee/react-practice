@@ -24,7 +24,7 @@ function SignUpPage() {
 
   return (
     <div className="container d-flex align-items-center justify-content-center min-vh-100">
-      <div className="card p-4 shadow" style={{ maxWidth: '450px', width: '100%' }}>
+      <div className="card p-5 shadow" style={{ maxWidth: '450px', width: '100%' }}>
         <h2 className="mb-4 text-center">Sign Up</h2>
         <form onSubmit={handleSignUp}>
           <InputField
@@ -63,7 +63,11 @@ function SignUpPage() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
 
-          <Button label="Create Account" variant="success" />
+          <Button 
+            label="Create Account"
+            color="success"
+            block={true}
+          />
         </form>
          <div className="text-center mt-3">
           <span>Already have an account? </span>

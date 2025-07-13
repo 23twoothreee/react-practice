@@ -15,7 +15,7 @@ function LoginPage() {
 
   return (
     <div className="container d-flex align-items-center justify-content-center min-vh-100">
-      <div className="card p-4 shadow" style={{ maxWidth: '400px', width: '100%' }}>
+      <div className="card p-5 shadow" style={{ maxWidth: '400px', width: '100%' }}>
         <h2 className="mb-4 text-center">Login</h2>
         <form onSubmit={handleLogin}>
           <InputField
@@ -34,7 +34,13 @@ function LoginPage() {
             placeholder="Enter password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button label="Login" variant="primary" />
+          <Button 
+            className="mt-3"
+            label="Login" 
+            color="primary" 
+            icon="fa fa-pencil"
+            block={true}
+          />
         </form>
 
         <div className="text-center mt-3">
